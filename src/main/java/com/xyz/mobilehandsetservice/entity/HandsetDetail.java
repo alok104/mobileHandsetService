@@ -9,7 +9,7 @@ import lombok.Data;
 @Document(collection = "handsetDetail")
 public class HandsetDetail {
 	@Id
-    public int id;
+    public Long id;
     public String brand;
     public String phone;
     public String picture;

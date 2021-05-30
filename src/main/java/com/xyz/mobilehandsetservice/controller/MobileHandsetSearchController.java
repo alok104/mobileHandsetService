@@ -22,7 +22,10 @@ public class MobileHandsetSearchController {
 	@GetMapping(Constant.SEARCH_URI)
 	public List<HandsetDetailVO> getHandsetDetails(@RequestParam(required = false) Double priceEur , @RequestParam(required = false) String sim, 
 			@RequestParam(required = false) Integer announceDate, @RequestParam(required = false) Double price) {
-		return handsetService.getHandsetDetails(priceEur, sim, announceDate, price);
+		if(priceEur == null) {
+			priceEur = price;
+		}
+		return handsetService.getHandsetDetails(priceEur, sim, announceDate);
 	}
 
 }
